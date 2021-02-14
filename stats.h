@@ -9,32 +9,99 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.h 
+ * @brief This file contains the decleration of fucntions use in the stats.c
  *
- * <Add Extended Description Here>
- *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Zill Ullah Khan
+ * @date 09-02-2021
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
+/**
+ * @brief Printing each elements of the array
+ *
+ * This function iterates through all the array
+ * elements and print the position and value
+ 
+ * @param unsigned char arrray pointer
+ * @param total array size
+ */
+ void print_array(unsigned char * ptr, int count);
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Sorting each elements of the array
  *
- * <Add Extended Description Here>
- *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- *
- * @return <Add Return Informaiton here>
+ * This function iterates through all the array
+ * elements and sorts each elements from largest
+ * to smallest 
+ 
+ * @param unsigned char arrray pointer
+ * @param total array size
  */
+ void array_sort(unsigned char * ptr, int count);
 
+/**
+ * @brief Printing statistics of the array
+ *
+ * This function just prints the statistics
+ * calculated from max, min , mean and median
+ * function.
+ 
+ * @param integer maximum value of array
+ * @param integer minimum value of array
+ * @param integer mean value of array
+ * @param integer median value of array
+ */
+void print_stats(int min, int max, int mean, float median);
+
+/**
+ * @brief Find the maximum value from the array
+ *
+ * This function iterates through all the array
+ * and find the maximum value present in that array
+ 
+ * @param unsigned char arrray pointer
+ * @param total array size
+ * @return maximum value integer
+ */
+ int find_max(unsigned char * ptr, int count);
+ 
+ /**
+ * @brief Find the minimum value from the array
+ *
+ * This function iterates through all the array
+ * and find the minimum value present in that array
+ 
+ * @param unsigned char arrray pointer
+ * @param total array size
+  * @return minimum value integer
+ */
+ int find_min(unsigned char * ptr, int count);
+ 
+  /**
+ * @brief Find the mean value from the array
+ *
+ * This function iterates through all the array
+ * and find the mean value present in that array
+ 
+ * @param unsigned char arrray pointer
+ * @param total array size
+  * @return mean value integer
+ */
+ int find_mean(unsigned char * ptr, int count);
+ 
+   /**
+ * @brief Find the median value from the array
+ *
+ * This function iterates through all the sorted array
+ * and find the median value present in that array
+ 
+ * @param unsigned char arrray array
+ * @param total array size
+  * @return median value float
+ */
+ float find_median(unsigned char ptr[], int count);
 
 #endif /* __STATS_H__ */
