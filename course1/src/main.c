@@ -29,7 +29,7 @@ char buffer[MAX_LENGTH];
 
 /* A pretty boring main file */
 int main(void) {
-#ifdefine COURSE1
+#if defined (COURSE1)
 	course1();
 #endif
   unsigned int i;
