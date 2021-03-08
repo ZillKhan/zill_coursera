@@ -79,10 +79,19 @@ void print_stats(int min, int max, int mean, float median){
 
 void print_array(unsigned char * ptr, int count){
 	int i = 0;
+	#if !defined (VERBOSE) && defined (HOST)
+	#undef PRINTF
+	#define PRINTF(...)
+	#endif
 	while (i < count){
-		printf("Array %ith Element is %i \n",i+1,ptr[i]);
+		PRINTF("Array %ith Element is %i \n",i+1,ptr[i]);
 		i++;
 	}
+	#if defined (VERBOS) && defined (HOST)
+	#undef PRINTF
+	#define PRINTF(...) printf(__VA_ARGS__)
+	#endif
+
 }
 
 void array_sort(unsigned char * ptr, int count){
