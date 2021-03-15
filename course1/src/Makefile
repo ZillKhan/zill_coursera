@@ -31,9 +31,9 @@ include sources.mk
 # General Flags for both platforms
 GFLAGS = -Wall \
 	-Werror \
-       -g \
+       $(VER) \
        -O0 \
-       -std=c99 
+       -std=c99 -D$(PLATFORM) -D$(VERBOSE) -D$(COURSE1)
 
 # Architectures Specific Flags
 LINKER_FILE =  -T msp432p401r.lds
@@ -44,7 +44,7 @@ FLOAT = hard
 FPU = fpv4-sp-d16
 SPECS = nosys.specs
 
-TARGET = c1m2
+TARGET = LastAssesment
 
 # Compiler Flags and Defines
 ifeq ($(PLATFORM), MSP432)
@@ -71,6 +71,10 @@ else
 	CPPFLAGS = $(PLATFORM_FILE) $(INCLUDES)
 	OBJDUMP = objdump 
 	SIZE = size
+endif
+
+ifeq ($(VERBOSE),VERBOSE)
+		VER = -g
 endif
 
 #building preprocessed files
@@ -103,6 +107,7 @@ $(TARGET).asm: $(TARGET).out
 
 .PHONY: compile-all
 compile-all: $(OBJ)
+	$(CC) $(INCLUDES) $(OBJ) -c $(CFLAGS) -o $(TARGET).o
 
 .PHONY: build
 build: $(TARGET).out

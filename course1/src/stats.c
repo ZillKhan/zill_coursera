@@ -30,6 +30,7 @@
 
 #define SIZE (40)
 
+/*
 void main() {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
@@ -60,7 +61,7 @@ void main() {
   print_stats(min,max,mean,median);
   
 }
-
+*/
 
 void print_stats(int min, int max, int mean, float median){
   

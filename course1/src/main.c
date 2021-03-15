@@ -31,7 +31,7 @@ char buffer[MAX_LENGTH];
 int main(void) {
 #if defined (COURSE1)
 	course1();
-#endif
+#else
   unsigned int i;
   char value;
 
@@ -53,6 +53,7 @@ int main(void) {
     PRINTF("%c", buffer[i]);
   }
   PRINTF("\n");
+#endif
   return 0;
 }
 

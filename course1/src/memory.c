@@ -50,6 +50,7 @@ void clear_all(char * ptr, unsigned int size){
 
 uint8_t* my_memmove(uint8_t* src, uint8_t* dst,size_t length){
 	uint8_t i = 0;
+	uint8_t* swap;
 	swap = (uint8_t*)reserve_words(length);
 
 	while (i<length){
@@ -61,7 +62,7 @@ uint8_t* my_memmove(uint8_t* src, uint8_t* dst,size_t length){
 		*(dst+1) = *(swap+1);
 		i++;
 	}
-	free_words((uint8_t*)swap);
+	free_words((uint32_t*)swap);
 	return dst;
 }
 
